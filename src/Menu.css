@@ -5,7 +5,12 @@
 
 .menu li {
     display: inline;
-    margin-right: 5px;
+    margin: auto 5px;
     border: 1px solid #000;
     padding: 3px;
+
+}
+
+.menu ul{
+    margin: 13px auto;
 }

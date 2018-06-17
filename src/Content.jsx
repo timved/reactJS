@@ -5,7 +5,7 @@ export default class Content extends Component {
         const { content } = this.props;
         return (
             <div className="content">
-                <p>{content}</p> // не работает ничего
+                <p>{content}</p>
             </div>
         );
     }

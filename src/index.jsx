@@ -1,14 +1,14 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import { Container, Row, Col } from 'reactstrap';
+import { Button } from 'reactstrap';
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'reactstrap';
-const app = document.getElementById('app');
-// // import Layout from 'layout';
-
 import Menu from './Menu.jsx';
-import Content from "./Content";
-// import Content from './Content.jsx';
+import Content from "./Content.jsx";
+import ModalWindow from "./ModalWindow.jsx";
 
+const app = document.getElementById('app');
 const menuItems = [
     {
         link: 'https://www.yandex.ru/', title: 'yandex'
@@ -22,35 +22,26 @@ const menuItems = [
 ];
 const contentItem = 'Lorem ipsum dolor sit amet, eum posse delenit ut, cum in esse congue eruditi. Epicuri volutpat referrentur est at.';
 
-
-// class App extends Component {
-//     render () {
-//         return (
-//             <Layout />
-//
-//         );
-//     }
-// }
-
 class App extends Component {
     render() {
         return (
             <Container>
-                <Row>
-                    <Col >
+                <Row  className="layout-top-menu">
+                    <Col className="col-6">
                         <Menu items={menuItems} title="Menu" />
                     </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Content content={contentItem} title="Menu" />
+                    <Col className="col-6">
+                        <ModalWindow buttonLabel = "Login" />
                     </Col>
                 </Row>
-                <Row>
-                    <Col >Hello</Col>
+                <Row className="layout-content">
+                    <Col>
+                        <Content content={contentItem} title="Content" />
+                    </Col>
                 </Row>
-
-
+                <Row className="layout-footer">
+                    <Col>Footer</Col>
+                </Row>
             </Container>
         );
     }
