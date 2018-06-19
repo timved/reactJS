@@ -10,6 +10,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.[chunkhash].js'
     },
+    resolve: {
+        extensions: ['.js', '.jsx'],
+        alias: {
+            components: path.resolve(__dirname, 'src/components')
+        }
+    },
     module: {
         rules: [
             {
@@ -23,7 +29,7 @@ module.exports = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader']
+                    use: ['css-loader', 'postcss-loader', 'sass-loader']
                 })
             }
         ]

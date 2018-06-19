@@ -1,12 +1,14 @@
-import React, {Component} from 'react';
-// import './Content.css';
+import React, {Component, Fragment} from 'react';
 export default class Content extends Component {
+    constructor (props){
+        super(props);
+    }
     render() {
         const { content } = this.props;
         return (
-            <div className="content">
+            <Fragment>
                 <p>{content}</p>
-            </div>
+            </Fragment>
         );
     }
 }
